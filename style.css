@@ -1,0 +1,423 @@
+/* ==========================================================
+   張騏驛 — 個人網站
+   簡約・乾淨・有質感 | 咖啡色系 + 暖灰
+   ========================================================== */
+
+:root {
+  --bg:        #F4F1EC;   /* 暖灰背景 */
+  --text:      #2B1D14;   /* 深咖啡 — 主要文字 */
+  --text-sub:  #75604E;   /* 淺咖啡 — 次要文字 */
+  --line:      #E3DACE;   /* 淡咖啡 — 分隔線 */
+  --accent:    #5C4636;   /* 深一階 — hover */
+
+  --serif: 'Noto Serif TC', 'Songti TC', 'Source Han Serif TC', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC',
+          'Noto Sans TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
+
+  --measure: 620px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- 版面骨架 ---------- */
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 72px 24px 88px;
+}
+
+/* ---------- 首屏 ---------- */
+
+.hero { text-align: center; }
+
+.hero__art {
+  display: block;
+  width: 180px;
+  height: auto;
+  margin: 0 auto 40px;
+}
+
+.hero__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero__name {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.3;
+  letter-spacing: 0.18em;
+  text-indent: 0.18em;      /* 抵銷最後一個字的間距，維持視覺置中 */
+}
+
+.hero__tagline {
+  margin: 18px 0 0;
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  color: var(--text-sub);
+  letter-spacing: 0.06em;
+}
+
+.hero__mail {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+  transition: color .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.hero__mail:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ---------- 區塊 ---------- */
+
+.block {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.block__label {
+  margin: 0 0 26px;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  letter-spacing: 0.24em;
+  text-indent: 0.24em;
+  color: var(--text-sub);
+}
+
+/* ---------- 關於我 ---------- */
+
+.about__school {
+  margin: 0 0 32px;
+  font-family: var(--serif);
+  font-size: 1.3125rem;
+  line-height: 1.75;
+  letter-spacing: 0.04em;
+}
+
+.focus {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.focus li {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 1rem;
+  color: var(--text-sub);
+  letter-spacing: 0.08em;
+}
+
+.focus li:first-child { padding-top: 0; }
+
+/* ---------- 作品 ---------- */
+
+.works {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: work;
+}
+
+.work {
+  counter-increment: work;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.work:first-child { padding-top: 0; }
+
+/* 圖片：截圖解析度較低，刻意限制顯示尺寸，避免放大後發糊 */
+.work__figure { margin: 0; }
+
+.work__figure img {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.work__name {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+.work__name::before {
+  content: '0' counter(work);
+  display: block;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-sub);
+  opacity: .55;
+  margin-bottom: 10px;
+}
+
+.work__en {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--text-sub);
+  letter-spacing: 0.04em;
+  margin-top: 3px;
+}
+
+.work__base {
+  margin: 14px 0 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  color: var(--text-sub);
+}
+
+.work__base::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--line);
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.work__desc {
+  margin: 14px 0 0;
+  font-size: 1rem;
+  line-height: 1.95;
+  color: var(--text-sub);
+}
+
+/* ---------- 聯絡 ---------- */
+
+.contact {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 3px;
+  transition: color .25s ease, border-color .25s ease;
+}
+
+.contact a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  color: var(--text-sub);
+  transition: color .25s ease;
+}
+
+.contact a:hover .icon { color: var(--accent); }
+
+/* ---------- 頁尾 ---------- */
+
+.foot {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.foot p {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--text-sub);
+  opacity: .6;
+}
+
+/* ==========================================================
+   動畫 — 極簡微動畫
+   軟淡入、輕微上移、細微縮放；節奏慢、曲線柔，不浮誇
+   ========================================================== */
+
+/* 未進場元素：淡出 + 微下移，出現時用「軟著陸」曲線回來 */
+.js .hero__art,
+.js .hero__name,
+.js .hero__tagline,
+.js .block,
+.js .foot {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity .8s cubic-bezier(.22,.61,.36,1),
+    transform .8s cubic-bezier(.22,.61,.36,1);
+}
+
+/* 信箱：只淡入、晚一拍（avoid 拖慢 hover 的 .27s 延遲） */
+.js .hero__mail {
+  opacity: 0;
+  transition:
+    opacity .8s cubic-bezier(.22,.61,.36,1) .27s,
+    color .25s ease,
+    border-color .25s ease,
+    transform .25s ease;
+}
+.js .hero.is-in .hero__mail { opacity: 1; }
+
+/* 首屏：logo、名字、標語依序浮現（信箱已單獨處理） */
+.js .hero__art { transform: translateY(10px) scale(.965); }
+.js .hero.is-in .hero__art    { transition-delay: 0s; }
+.js .hero.is-in .hero__name   { transition-delay: .09s; }
+.js .hero.is-in .hero__tagline{ transition-delay: .18s; }
+
+.js .hero.is-in .hero__art,
+.js .hero.is-in .hero__name,
+.js .hero.is-in .hero__tagline,
+.js .block.is-in,
+.js .foot.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* 區塊標題：跟著區塊淡入，晚一拍出現 */
+.js .block__label {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.js .block.is-in .block__label {
+  opacity: 1;
+  transform: none;
+  transition-delay: .08s;
+}
+
+/* ---------- 作品 hover ---------- */
+
+.work__figure img {
+  transition: transform .5s cubic-bezier(.22,.61,.36,1), border-color .3s ease;
+}
+.work:hover .work__figure img {
+  transform: scale(1.03);
+  border-color: var(--text-sub);
+}
+
+.work__name { transition: color .3s ease; }
+.work:hover .work__name { color: var(--accent); }
+
+.work__name::before {
+  transition: color .3s ease, opacity .3s ease;
+}
+.work:hover .work__name::before {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* ---------- 信箱 / 聯絡圖示 ---------- */
+
+.icon {
+  transition: color .25s ease, transform .25s ease;
+}
+.contact a:hover .icon {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+/* ---------- 關於我列表 ---------- */
+
+.focus li { transition: color .3s ease; }
+.focus li:hover { color: var(--text); }
+
+/* ==========================================================
+   無障礙：尊重「減少動態效果」設定
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js .hero__art,
+  .js .hero__name,
+  .js .hero__tagline,
+  .js .hero__mail,
+  .js .block,
+  .js .foot,
+  .js .block__label {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================
+   響應式
+   ========================================================== */
+
+@media (min-width: 600px) {
+  .wrap { padding: 96px 24px 112px; }
+  .hero__art { width: 200px; }
+  .hero__name { font-size: 2.625rem; }
+  .hero__tagline { font-size: 1.1875rem; }
+  .block { margin-top: 76px; padding-top: 48px; }
+}
+
+@media (min-width: 900px) {
+  .hero__art { width: 216px; }
+}
+
+/* 中文內文行長控制 */
+.work__desc,
+.about__school { max-width: 34em; }
+
+/* 作品：桌機時圖片靠左、文字靠右 */
+@media (min-width: 720px) {
+  .work {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 44px;
+    align-items: start;
+  }
+  .work__body { padding-top: 2px; }
+}

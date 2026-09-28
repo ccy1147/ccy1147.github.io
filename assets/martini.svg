@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" width="400" height="420" role="img" aria-labelledby="t d">
+  <title id="t">Espresso Martini</title>
+  <desc id="d">一只古典琴杯盛著義式濃縮馬丁尼，表面浮著奶泡，擺有三顆咖啡豆。</desc>
+
+  <defs>
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#5A3A24"/>
+      <stop offset="55%" stop-color="#3A2114"/>
+      <stop offset="100%" stop-color="#26150D"/>
+    </linearGradient>
+
+    <linearGradient id="foam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#F3E8D4"/>
+      <stop offset="100%" stop-color="#DBC9AB"/>
+    </linearGradient>
+
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#FAF6F0"/>
+      <stop offset="100%" stop-color="#EDE4D7"/>
+    </linearGradient>
+
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"   stop-color="#B4A494" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#B4A494" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="400" height="420" fill="#F4F1EC"/>
+
+  <!-- 桌面陰影 -->
+  <ellipse cx="200" cy="374" rx="78" ry="13" fill="url(#shadow)"/>
+
+  <!-- 杯腳與底座 -->
+  <g stroke="#C6B7A5" stroke-width="3.2" stroke-linecap="round">
+    <line x1="200" y1="292" x2="200" y2="352"/>
+  </g>
+  <ellipse cx="200" cy="354" rx="45" ry="11" fill="url(#glass)" stroke="#C6B7A5" stroke-width="3.2"/>
+
+  <!-- 杯身（空杯底色） -->
+  <path d="M 112,148 C 114,208 152,260 196,298 L 204,298 C 248,260 286,208 288,148 A 88,20 0 0 1 112,148 Z"
+        fill="url(#glass)"/>
+
+  <!-- 酒液 -->
+  <path d="M 114,150 C 116,208 154,259 197,296 L 203,296 C 246,259 284,208 286,150 A 86,19.5 0 0 1 114,150 Z"
+        fill="url(#liquid)"/>
+
+  <!-- 奶泡層 -->
+  <ellipse cx="200" cy="150" rx="85" ry="19" fill="url(#foam)"/>
+  <ellipse cx="200" cy="150" rx="85" ry="19" fill="none" stroke="#C8B293" stroke-width="1.4" opacity="0.75"/>
+
+  <!-- 咖啡豆 -->
+  <g>
+    <g transform="translate(180,146) rotate(-20)">
+      <ellipse rx="10" ry="7" fill="#3A2114"/>
+      <path d="M -6.5,0 C -2.5,-3.2 2.5,-3.2 6.5,0" fill="none" stroke="#7A5539" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(202,144) rotate(7)">
+      <ellipse rx="10.5" ry="7.2" fill="#331C11"/>
+      <path d="M -6.8,0 C -2.6,-3.3 2.6,-3.3 6.8,0" fill="none" stroke="#7A5539" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(222,149) rotate(26)">
+      <ellipse rx="9.5" ry="6.6" fill="#3A2114"/>
+      <path d="M -6.2,0 C -2.4,-3 2.4,-3 6.2,0" fill="none" stroke="#7A5539" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 杯緣與外框（疊在最上層，讓杯口銳利） -->
+  <path d="M 112,148 C 114,208 152,260 196,298 L 204,298 C 248,260 286,208 288,148"
+        fill="none" stroke="#C6B7A5" stroke-width="3.2" stroke-linecap="round"/>
+  <ellipse cx="200" cy="148" rx="88" ry="20" fill="none" stroke="#B8A794" stroke-width="3.2"/>
+
+  <!-- 杯身高光 -->
+  <path d="M 134,164 C 139,200 155,226 174,246" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+</svg>
